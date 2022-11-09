@@ -49,6 +49,10 @@
 
 ### Screenshots
 
+![](/public/images/screenshot-8.png)
+
+![](/public/images/screenshot-7.png)
+
 ![](/public/images/screenshot-1.png)
 
 ![](/public/images/screenshot-2.png)
