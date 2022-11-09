@@ -1,0 +1,77 @@
+@import '_variables';
+
+.dashboard-container {
+  width: 100%;
+  @include customFlex(center, flex-start, column, 2);
+  padding: 2rem;
+}
+
+.stats-boxes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  width: 100%;
+}
+.stats-box {
+  @include customFlex(flex-start, center, column, 1.25);
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: $radiusNormal;
+  .top {
+    width: 100%;
+    @include customFlex(center, space-between, row, 0);
+    h4 {
+      font-size: 3rem;
+    }
+    .icon {
+      padding: 1rem 1.5rem;
+      border-radius: $radiusNormal;
+    }
+    svg {
+      font-size: 2rem;
+    }
+  }
+  .title h3 {
+    font-size: 1.5rem;
+    font-weight: normal;
+  }
+}
+
+.applications-box {
+  border-bottom: 5px solid $orange;
+  h4 {
+    color: $orange;
+  }
+  .icon {
+    background-color: $orangeLight;
+  }
+  svg {
+    fill: $orange;
+  }
+}
+
+.interviews-box {
+  border-bottom: 5px solid $violetBlue;
+  h4 {
+    color: $violetBlue;
+  }
+  .icon {
+    background-color: $violetBlueLight;
+  }
+  svg {
+    fill: $violetBlue;
+  }
+}
+
+.jobs-box {
+  border-bottom: 5px solid $tomato;
+  h4 {
+    color: $tomato;
+  }
+  .icon {
+    background-color: $tomatoLight;
+  }
+  svg {
+    fill: $tomato;
+  }
+}

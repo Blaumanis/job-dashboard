@@ -1,0 +1,59 @@
+@import '_variables';
+
+.side-navbar {
+  background: #fff;
+  height: 100%;
+  min-height: 100vh;
+  width: 250px;
+  @include customFlex(flex-start, flex-start, column, 4);
+  box-shadow: rgb(0 0 0 / 10%) 1px 0px 0px 0px;
+  transition: $transNormal;
+
+  .logo {
+    padding: 2rem;
+    position: fixed;
+    top: 0;
+  }
+
+  .menu-container {
+    @include customFlex(flex-start, center, column, 1);
+    width: 250px;
+    position: fixed;
+    top: 140px;
+
+    .active {
+      color: $primary;
+      svg {
+        fill: $primary;
+      }
+    }
+
+    a {
+      color: $bluishGray;
+      padding: 1rem 2rem;
+      font-size: 1.15rem;
+      @include customFlex(center, flex-start, row, 0.5);
+      transition: $transNormal;
+      width: 100%;
+      &:hover:not(.active) {
+        background-color: $linkBgHover;
+        padding-left: 2.5rem;
+        color: $linkTextHover;
+      }
+      &:hover:not(.active) svg {
+        fill: $primary;
+      }
+    }
+    
+    svg {
+      fill: $bluishGray;
+      transition: $transNormal;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .side-navbar {
+    display: none;
+  }
+}

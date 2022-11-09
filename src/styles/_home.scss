@@ -1,0 +1,77 @@
+@import '_variables';
+
+.header {
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.container {
+  @include customFlex(center, center, row, 2);
+  padding: 1rem;
+}
+
+.text-container {
+  @include customFlex(flex-start, flex-start, column, 2);
+  flex-basis: 40%;
+  .title {
+    font-size: 3rem;
+  }
+}
+
+.img-container {
+  img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+  }
+}
+
+.title span {
+  color: $primary;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  .text-container {
+    gap: 1rem;
+    .desc {
+      width: 75%;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .text-container {
+    .title {
+      font-size: 2.5rem;
+    }
+    .desc {
+      width: 90%;
+    }
+  }
+}
+@media (max-width: 425px) {
+  .container {
+    align-items: center;
+  }
+  .text-container {
+    align-items: center;
+    text-align: center;
+    .title {
+      font-size: 2.25rem;
+    }
+    .desc {
+      width: 100%;
+    }
+  }
+  .btn {
+    font-size: 1rem;
+  }
+  .img-container img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+  }
+}

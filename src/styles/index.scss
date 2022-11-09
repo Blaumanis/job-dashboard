@@ -1,0 +1,62 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap');
+@import '_variables';
+
+*,*::after, *::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root,
+.app,
+.content {
+  height: 100%;
+  width: 100%;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+body {
+  background-color: $bg;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  color: $textDark;
+}
+
+p {
+  line-height: $lhNormal;
+}
+
+.btn {
+  text-decoration: none;
+  border: none;
+  color: $textLight;
+  padding: 0.75rem 1.45rem;
+  background-color: $primary;
+  border-radius: $radiusNormal;
+  transition: $transNormal;
+  font-size: 1.1rem;
+  font-family: inherit;
+  cursor: pointer;
+  &:hover {
+    background-color: $primeHover;
+  }
+}
+
+input {
+  font-family: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: $primary;
+  font-weight: 600;
+}
+
+.main-container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}

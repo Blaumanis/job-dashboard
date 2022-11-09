@@ -1,0 +1,41 @@
+@import '_variables';
+
+.login-container, .register-container {
+  height: 100vh;
+  padding: 1rem;
+  @include customFlex(center, center, column, 0);
+}
+
+.form {
+  background-color: #fff;
+  padding: 2rem;
+  width: 400px;
+  border-radius: $radiusLarge;
+  @include customFlex(center, center, column, 1);
+  border-top: 5px solid $primary;
+  box-shadow: $boxShadow;
+
+  h2 {
+    font-size: 2rem;
+    margin: 1rem 0;
+  }
+
+  button {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+}
+
+.input-group {
+  @include customFlex(flex-start, flex-start, column, .5);
+  width: 100%;
+  input, select {
+    width: 100%;
+    padding: .6rem;
+    background-color: $bg;
+    border-radius: $radiusNormal;
+    border: 1px solid $borderColor;
+  }
+    
+}

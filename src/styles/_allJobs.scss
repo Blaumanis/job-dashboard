@@ -1,0 +1,104 @@
+@import '_variables';
+
+.jobs-total {
+  margin: 2rem;
+  margin-top: 4rem;
+}
+
+.jobs-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 2rem;
+}
+
+.job-card {
+  @include customFlex(flex-start, flex-start, column, 1.5);
+  background-color: #fff;
+  box-shadow: $boxShadow;
+  padding: 2rem 0;
+  text-transform: capitalize;
+
+  .top {
+    width: 100%;
+    padding: 0 2rem;
+    padding-bottom: 1rem;
+    @include customFlex(center, flex-start, row, 2);
+    border-bottom: 1px solid $borderColor;
+
+    h2 {
+      height: 51px;
+      width: 51px;
+      @include customFlex(center, center, row, 0);
+      background-color: $primary;
+      color: $textLight;
+      border-radius: $radiusNormal;
+    }
+
+    .job-title {
+      margin-bottom: 0.5rem;
+    }
+    .company-name {
+      color: $grayBlue;
+      font-weight: 500;
+    }
+  }
+  .middle {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 0 1.5rem;
+
+    :last-child {
+      border-radius: $radiusNormal;
+      @include customFlex(center, center, row, 0.75);
+    }
+
+    h4 {
+      @include customFlex(center, flex-start, row, 0.75);
+      font-weight: 500;
+      padding: 0.5rem;
+      svg {
+        fill: $cardSvgFill;
+      }
+    }
+  }
+  .bottom {
+    width: 100%;
+    padding: 0 2rem;
+    .btn {
+      padding: 0.4rem 0.9rem;
+      font-weight: 500;
+      transition: $transNormal;
+      &:hover {
+        box-shadow: $boxShadow;
+      }
+    }
+    .edit {
+      margin-right: 0.5rem;
+      background-color: $editBg;
+      color: $editColor;
+    }
+    .delete {
+      background-color: $tomatoLight;
+      color: $tomatoText;
+    }
+  }
+}
+
+.pending {
+  color: $orange;
+  background-color: $orangeLight;
+  width: 100px;
+}
+.interview {
+  color: $interviewColor;
+  background-color: $violetBlueLight;
+  width: 100px;
+}
+.declined {
+  background-color: $tomatoLight;
+  width: 100px;
+  color: $tomatoText;
+}

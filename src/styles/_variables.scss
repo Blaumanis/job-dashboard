@@ -1,0 +1,48 @@
+// VARIABLES
+$bg: #f0f4f8;
+$primary: #3b82f6;
+$primeHover: #1d4ed8;
+$textDark: #102a43;
+$textLight: #f9f7fd;
+$borderColor: #bcccdc;
+$bluishGray :#91a4b7;
+$linkBgHover: #f0f4f8;
+$linkTextHover: #102a43;
+$orange: #e9b949;
+$orangeLight: #fcefc7;
+$violetBlue: #647acb;
+$violetBlueLight: #e0e8f9;
+$tomato: #d66a6a;
+$tomatoText: #99585e;
+$tomatoLight: #ffeeee;
+$clear: #627d98;
+$rose: #f8d7da;
+$grayBlue: #93b6d1;
+$editBg: #d1e7dd;
+$editColor: #517144;
+$interviewColor: #7883d1;
+$cardSvgFill: #829ab1;
+$mobileMenuBg: rgba(0, 0, 0, 0.7);
+$logoutBg: rgba(59, 131, 246, 0.8);
+
+
+
+
+
+$boxShadow: 0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06);
+
+$lhNormal: 1.6;
+
+$transNormal: all 300ms linear;
+
+$radiusNormal: 0.350rem;
+$radiusLarge: 0.5rem;
+
+// MIXINS
+@mixin customFlex($ai, $jc, $fd, $gp) {
+    display: flex;
+    align-items: $ai;
+    justify-content: $jc;
+    flex-direction: $fd;
+    gap: $gp + rem;
+}

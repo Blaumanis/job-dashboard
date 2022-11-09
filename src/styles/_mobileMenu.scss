@@ -1,0 +1,75 @@
+@import '_variables';
+
+.mobile-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  background-color: $mobileMenuBg;
+  .close-icon {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    color: $tomato;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+  }
+  .inside-container {
+    background: white;
+    width: 95%;
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: $radiusLarge;
+    position: relative;
+    padding-top: 3rem;
+  }
+  .logo {
+    padding: 2rem;
+  }
+
+  .menu-container {
+    @include customFlex(flex-start, center, column, 1);
+
+    .active {
+      color: $primary;
+      svg {
+        fill: $primary;
+      }
+    }
+
+    a {
+      color: $bluishGray;
+      padding: 1rem 2rem;
+      font-size: 1.15rem;
+      @include customFlex(center, flex-start, row, 0.5);
+      transition: $transNormal;
+      width: 100%;
+      &:hover:not(.active) {
+        color: $linkTextHover;
+      }
+      &:hover:not(.active) svg {
+        fill: $primary;
+      }
+    }
+
+    svg {
+      fill: $bluishGray;
+      transition: $transNormal;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .mobile-menu {
+    display: none;
+  }
+}

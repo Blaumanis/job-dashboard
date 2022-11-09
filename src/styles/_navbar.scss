@@ -1,0 +1,67 @@
+@import '_variables';
+
+.top-navbar {
+  background-color: #fff;
+  position: sticky;
+  top: 0;
+  padding: 2rem;
+  box-shadow: rgb(0 0 0 / 10%) 0px 1px 0px 0px;
+  animation: goFull 1s ease-in;
+
+  .wrapper {
+    @include customFlex(center, space-between, row, 0);
+  }
+
+  .menu-icon {
+    fill: $primary;
+    cursor: pointer;
+  }
+
+  h2 {
+    color: $textDark;
+    font-size: 2.15rem;
+    font-weight: 500;
+  }
+
+  button {
+    @include customFlex(center, center, row, 1);
+  }
+}
+
+.logout-container {
+  position: relative;
+  .logout {
+    position: absolute;
+    bottom: -50px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: $radiusNormal;
+    background-color: $logoutBg;
+    color: $textLight;
+    cursor: pointer;
+  }
+}
+
+.full {
+  width: 100vw;
+}
+
+@media (max-width: 768px) {
+  .top-navbar {
+    width: 100vw;
+  }
+}
+
+// @keyframes goFull {
+//   0% {
+//     opacity: 0;
+//     width: 80vw;
+//   }
+//   100% {
+//     opacity: 1;
+//     width: 100vw;
+//   }
+// }
