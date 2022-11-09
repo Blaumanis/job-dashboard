@@ -47,10 +47,16 @@
 - Implementing protected routes. Basically if user is not logged in, he cannot access project dashboard
 - Sort by object property. Had to sort jobs list by by job title in alphabetic order
 
-### Screenshot
+### Screenshots
+
 ![](/public/images/screenshot-1.png)
+
 ![](/public/images/screenshot-2.png)
+
 ![](/public/images/screenshot-3.png)
+
 ![](/public/images/screenshot-4.png)
+
 ![](/public/images/screenshot-5.png)
+
 ![](/public/images/screenshot-6.png)
