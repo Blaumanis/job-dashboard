@@ -17,15 +17,24 @@
     cursor: pointer;
   }
 
-  h2 {
-    color: $textDark;
-    font-size: 2.15rem;
-    font-weight: 500;
-  }
-
   button {
     @include customFlex(center, center, row, 1);
   }
+}
+
+.logout-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  width: 150px;
+  display: none;
+}
+
+h2 {
+  font-weight: 500;
 }
 
 .logout-container {
@@ -52,6 +61,36 @@
 @media (max-width: 768px) {
   .top-navbar {
     width: 100vw;
+  }
+  .logo {
+    display: block;
+    width: 130px;
+  }
+  h2 {
+    display: none;
+  }
+  .top-navbar .btn {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+  .logout-container .logout {
+    bottom: -45px;
+  }
+}
+
+@media (max-width: 568px) {
+  .top-navbar {
+    padding: 2rem 1rem;
+  }
+  .top-navbar button {
+    gap: 0.5rem;
+  }
+  .logo {
+    width: 100px;
+  }
+  .top-navbar .btn {
+    font-size: 1rem;
+    padding: 0.5rem 0.8rem;
   }
 }
 

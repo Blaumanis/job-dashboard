@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux'
 import { removeItem } from '../features/job/jobSlice'
 import moment from 'moment'
 import { Link } from 'react-router-dom'
+import { useEffect } from 'react'
 
 const Job = ({
   id,

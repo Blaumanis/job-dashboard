@@ -1,14 +1,12 @@
 @import '_variables';
 
 .mobile-menu {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  position: fixed;
   z-index: 3;
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  inset: 0px;
   background-color: $mobileMenuBg;
   .close-icon {
     width: 30px;
@@ -22,8 +20,8 @@
   }
   .inside-container {
     background: white;
-    width: 95%;
-    height: 95%;
+    width: 92.5%;
+    height: 92.5%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -33,18 +31,11 @@
     padding-top: 3rem;
   }
   .logo {
-    padding: 2rem;
+    margin-bottom: 2rem
   }
 
   .menu-container {
     @include customFlex(flex-start, center, column, 1);
-
-    .active {
-      color: $primary;
-      svg {
-        fill: $primary;
-      }
-    }
 
     a {
       color: $bluishGray;

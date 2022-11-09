@@ -9,7 +9,7 @@
   box-shadow: rgb(0 0 0 / 10%) 1px 0px 0px 0px;
   transition: $transNormal;
 
-  .logo {
+  .sidebar-logo {
     padding: 2rem;
     position: fixed;
     top: 0;
@@ -22,7 +22,9 @@
     top: 140px;
 
     .active {
-      color: $primary;
+      color: $linkTextHover;
+      padding-left: 2.5rem;
+      background-color: $linkBgHover;
       svg {
         fill: $primary;
       }
@@ -54,6 +56,9 @@
 
 @media (max-width: 768px) {
   .side-navbar {
+    display: none;
+  }
+  .sidebar-logo {
     display: none;
   }
 }

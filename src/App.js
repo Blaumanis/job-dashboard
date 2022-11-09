@@ -63,7 +63,7 @@ function App() {
           />
         </Route>
       </Routes>
-      <ToastContainer autoClose={2000} theme='light' />
+      <ToastContainer autoClose={7000} theme='light' />
     </div>
   )
 }

@@ -102,3 +102,11 @@
   width: 100px;
   color: $tomatoText;
 }
+
+
+@media (max-width: 768px) {
+  .jobs-container {
+    grid-template-columns: 1fr;
+    margin: 2rem 1rem;
+  }
+}

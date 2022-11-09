@@ -8,7 +8,7 @@ import MobileMenu from './MobileMenu'
 
 const Navbar = () => {
   const dispatch = useDispatch()
-  const { isOpen, isMobileOpen } = useSelector((state) => state.nav)
+  let { isOpen, isMobileOpen } = useSelector((state) => state.nav)
   const { auth } = useSelector((state) => state.auth)
 
   const [isClicked, setIsClicked] = useState(false)
@@ -34,14 +34,21 @@ const Navbar = () => {
         <div onClick={() => handleToggler()}>
           <MenuIcon />
         </div>
-        <h2>Dashboard</h2>
+        <div className='logo-container'>
+          <img
+            src='https://redux-toolkit-jobster.netlify.app/static/media/logo.35bb8e1d9b5745af32ff148cbee51dfa.svg'
+            alt='logo'
+            className='logo'
+          />
+          <h2>Dashboard</h2>
+        </div>
         <div className='logout-container'>
           <button
             onClick={() => setIsClicked(!isClicked)}
             className='btn logout-btn'
           >
             <UserIcon />
-            {auth[0].name}
+            {auth[0]?.name}
             <ArrowDownIcon />
           </button>
           {isClicked ? (

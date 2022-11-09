@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from 'uuid'
 import { toast } from 'react-toastify'
 import { useNavigate } from 'react-router-dom'
 import { addToList } from '../features/job/jobSlice'
+import moment from 'moment'
 
 const AddJob = () => {
   const dispatch = useDispatch()
@@ -16,6 +17,7 @@ const AddJob = () => {
     location: '',
     jobStatus: 'interview',
     jobType: 'remote',
+    createdAt: Date.now()
   })
 
   const handleClick = (e) => {
@@ -29,6 +31,7 @@ const AddJob = () => {
           location: values.location,
           jobStatus: values.jobStatus,
           jobType: values.jobType,
+          createdAt: Date.now()
         })
       )
       toast.success(`${values.title} added to the jobs list`);
@@ -90,13 +93,13 @@ const AddJob = () => {
           <label htmlFor='status'>Status</label>
           <select
             id='status'
-            value={values.jobStatus}
             onChange={(e) =>
               setValues({ ...values, jobStatus: e.target.value })
             }
+            value={values.jobStatus}
           >
             {statuses.map((item) => (
-              <option value={item}>{item}</option>
+              <option key={item} value={item}>{item}</option>
             ))}
           </select>
         </div>
@@ -104,13 +107,13 @@ const AddJob = () => {
           <label htmlFor='jobType'>Job Type</label>
           <select
             id='jobType'
-            value={values.jobType}
             onChange={(e) =>
-              setValues({ ...values, jobStatus: e.target.value })
+              setValues({ ...values, jobType: e.target.value })
             }
+            value={values.jobType}
           >
             {types.map((item) => (
-              <option value={item}>{item}</option>
+              <option key={item} value={item}>{item}</option>
             ))}
           </select>
         </div>

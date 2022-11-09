@@ -11,7 +11,7 @@ const EditJob = () => {
   const navigate = useNavigate()
   const pickedJob = jobs.filter((job) => job.id === params.id)
   const { title, company, location, jobStatus, jobType } = pickedJob[0]
-console.log(jobs)
+
   const [values, setValues] = useState({
     title,
     company,
@@ -85,7 +85,7 @@ console.log(jobs)
             onChange={(e) => setValues({...values,jobStatus:e.target.value})}
           >
             {statuses.map((item) => (
-              <option value={item}>{item}</option>
+              <option key={item} value={item}>{item}</option>
             ))}
           </select>
         </div>
@@ -97,7 +97,7 @@ console.log(jobs)
             onChange={(e) => setValues({...values,jobType:e.target.value})}
           >
             {types.map((item) => (
-              <option value={item}>{item}</option>
+              <option key={item} value={item}>{item}</option>
             ))}
           </select>
         </div>

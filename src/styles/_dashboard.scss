@@ -75,3 +75,18 @@
     fill: $tomato;
   }
 }
+@media (max-width: 1185px) {
+  .stats-boxes {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 2rem 1rem;
+  }
+}
+@media (max-width: 668px) {
+  .stats-boxes {
+    grid-template-columns: 1fr;
+  }
+}

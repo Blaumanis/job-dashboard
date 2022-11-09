@@ -61,6 +61,13 @@ width: 100%;
     .dashboard-form-container .dashboard-form {
         grid-template-columns: 1fr 1fr;
     }
+    .dashboard-form-container {
+      margin: 1rem;
+      padding: 1.5rem;
+    }
+    .jobs-total {
+      margin: 2rem 1rem;
+    }
 }
 @media (max-width: 608px) {
     .dashboard-form-container .dashboard-form {

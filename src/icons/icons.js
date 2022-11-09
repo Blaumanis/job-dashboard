@@ -4,7 +4,7 @@ export const MenuIcon = () => {
       className='menu-icon'
       stroke='currentColor'
       fill='currentColor'
-      stroke-width='0'
+      strokeWidth='0'
       viewBox='0 0 448 512'
       height='28px'
       width='28px'
@@ -20,7 +20,7 @@ export const UserIcon = () => {
     <svg
       stroke='currentColor'
       fill='currentColor'
-      stroke-width='0'
+      strokeWidth='0'
       viewBox='0 0 496 512'
       height='1em'
       width='1em'
@@ -36,7 +36,7 @@ export const ArrowDownIcon = () => {
     <svg
       stroke='currentColor'
       fill='currentColor'
-      stroke-width='0'
+      strokeWidth='0'
       viewBox='0 0 320 512'
       height='1em'
       width='1em'
@@ -52,7 +52,7 @@ export const StatsIcon = () => {
     <svg
       stroke='currentColor'
       fill='currentColor'
-      stroke-width='0'
+      strokeWidth='0'
       viewBox='0 0 512 512'
       height='1em'
       width='1em'
@@ -69,7 +69,7 @@ export const LookIcon = () => {
     <svg
       stroke='currentColor'
       fill='currentColor'
-      stroke-width='0'
+      strokeWidth='0'
       viewBox='0 0 24 24'
       height='1em'
       width='1em'
@@ -86,7 +86,7 @@ export const AddIcon = () => {
     <svg
       stroke='currentColor'
       fill='currentColor'
-      stroke-width='0'
+      strokeWidth='0'
       viewBox='0 0 448 512'
       height='1em'
       width='1em'
@@ -102,7 +102,7 @@ export const ProfileIcon = () => {
     <svg
       stroke='currentColor'
       fill='currentColor'
-      stroke-width='0'
+      strokeWidth='0'
       version='1.1'
       viewBox='0 0 16 16'
       height='1em'
@@ -119,7 +119,7 @@ export const ApplicationsIcon = () => {
     <svg
       stroke='currentColor'
       fill='currentColor'
-      stroke-width='0'
+      strokeWidth='0'
       viewBox='0 0 384 512'
       height='1em'
       width='1em'
@@ -135,7 +135,7 @@ export const InterviewsIcon = () => {
     <svg
       stroke='currentColor'
       fill='currentColor'
-      stroke-width='0'
+      strokeWidth='0'
       viewBox='0 0 384 512'
       height='1em'
       width='1em'
@@ -151,7 +151,7 @@ export const JobsIcon = () => {
     <svg
       stroke='currentColor'
       fill='currentColor'
-      stroke-width='0'
+      strokeWidth='0'
       viewBox='0 0 512 512'
       height='1em'
       width='1em'
@@ -167,7 +167,7 @@ export const LocationIcon = () => {
     <svg
       stroke='currentColor'
       fill='currentColor'
-      stroke-width='0'
+      strokeWidth='0'
       viewBox='0 0 512 512'
       height='1em'
       width='1em'
@@ -183,7 +183,7 @@ export const TypeIcon = () => {
     <svg
       stroke='currentColor'
       fill='currentColor'
-      stroke-width='0'
+      strokeWidth='0'
       viewBox='0 0 512 512'
       height='1em'
       width='1em'
@@ -199,7 +199,7 @@ export const DateIcon = () => {
     <svg
       stroke='currentColor'
       fill='currentColor'
-      stroke-width='0'
+      strokeWidth='0'
       viewBox='0 0 448 512'
       height='1em'
       width='1em'
@@ -215,15 +215,14 @@ export const CloseIcon = () => {
     <svg
       xmlns='http://www.w3.org/2000/svg'
       viewBox='0 0 24 24'
-      stroke-width='3.5'
+      strokeWidth='3.5'
       stroke='currentColor'
       fill="currentColor"
-      class='w-6 h-6'
-      className="close-icon"
+      className="close-icon w-6 h-6"
     >
       <path
-        stroke-linecap='round'
-        stroke-linejoin='round'
+        strokeLinecap='round'
+        strokeLinejoin='round'
         d='M6 18L18 6M6 6l12 12'
       />
     </svg>

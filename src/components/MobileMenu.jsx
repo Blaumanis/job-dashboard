@@ -12,14 +12,13 @@ import { toggleMobileMenu } from '../features/nav/navSlice'
 import { useDispatch } from 'react-redux'
 
 const MobileMenu = () => {
-    const dispatch = useDispatch()
-    
+  const dispatch = useDispatch()
 
   return (
     <section className='mobile-menu'>
       <div className='inside-container'>
-        <button onClick={()=> dispatch(toggleMobileMenu())}>
-        <CloseIcon className='close-icon' />
+        <button onClick={() => dispatch(toggleMobileMenu())}>
+          <CloseIcon className='close-icon' />
         </button>
         <img
           className='logo'
@@ -27,16 +26,16 @@ const MobileMenu = () => {
           alt='logo'
         />
         <div className='menu-container'>
-          <Link className='active' to='/dashboard'>
+          <Link onClick={() => dispatch(toggleMobileMenu())} to='/dashboard'>
             <StatsIcon /> Stats
           </Link>
-          <Link to='/all-jobs'>
+          <Link onClick={() => dispatch(toggleMobileMenu())} to='/all-jobs'>
             <LookIcon /> All Jobs
           </Link>
-          <Link to='/add-job'>
+          <Link onClick={() => dispatch(toggleMobileMenu())} to='/add-job'>
             <AddIcon /> Add Job
           </Link>
-          <Link to='/profile'>
+          <Link onClick={() => dispatch(toggleMobileMenu())} to='/profile'>
             <ProfileIcon /> Profile
           </Link>
         </div>

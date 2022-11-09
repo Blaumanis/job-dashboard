@@ -4,24 +4,29 @@ import { StatsIcon, LookIcon, AddIcon, ProfileIcon } from '../icons/icons'
 import { Link } from 'react-router-dom'
 
 const Sidebar = () => {
+  const handleClick = (e) => {
+    const links = e.target.parentElement.childNodes
+    links.forEach(link => link.classList.remove('active'))
+    e.target.classList.add('active')
+  }
   return (
     <aside className='side-navbar'>
       <img
-        className='logo'
+        className='sidebar-logo'
         src='https://redux-toolkit-jobster.netlify.app/static/media/logo.35bb8e1d9b5745af32ff148cbee51dfa.svg'
         alt='logo'
       />
       <div className='menu-container'>
-        <Link className='active' to='/dashboard'>
+        <Link onClick={e => handleClick(e)} to='/dashboard'>
           <StatsIcon /> Stats
         </Link>
-        <Link to='/all-jobs'>
+        <Link onClick={e => handleClick(e)} to='/all-jobs'>
           <LookIcon /> All Jobs
         </Link>
-        <Link to='/add-job'>
+        <Link onClick={e => handleClick(e)} to='/add-job'>
           <AddIcon /> Add Job
         </Link>
-        <Link to='/profile'>
+        <Link onClick={e => handleClick(e)} to='/profile'>
           <ProfileIcon /> Profile
         </Link>
       </div>
