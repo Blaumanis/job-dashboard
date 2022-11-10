@@ -1,10 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { toast } from 'react-toastify'
 
+// setting up localStorage
 const users =
   localStorage.getItem('users') !== null
     ? JSON.parse(localStorage.getItem('users'))
     : []
+
+const storageActiveUser =
+  localStorage.getItem('activeUser') !== null
+    ? JSON.parse(localStorage.getItem('activeUser'))
+    : {}
 
 const token =
   localStorage.getItem('token') !== null
@@ -14,7 +20,7 @@ const token =
 const initialState = {
   auth: users,
   isAuthenticated: token,
-  activeUser: {}
+  activeUser: storageActiveUser,
 }
 
 const authSlice = createSlice({
@@ -79,6 +85,10 @@ const authSlice = createSlice({
         )
         // setting up active user
         state.activeUser = action.payload
+        localStorage.setItem(
+          'activeUser',
+          JSON.stringify(state.activeUser)
+        )
         toast.success(`Greetings ${action.payload.name}`)
       }
     },
@@ -86,6 +96,10 @@ const authSlice = createSlice({
       localStorage.setItem(
         'token',
         JSON.stringify((state.isAuthenticated = 'false'))
+      )
+      localStorage.setItem(
+        'activeUser',
+        JSON.stringify({})
       )
     },
   },
