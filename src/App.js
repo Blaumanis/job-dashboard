@@ -9,6 +9,7 @@ import Profile from './pages/Profile'
 import EditJob from './pages/EditJob'
 import SharedLayout from './pages/SharedLayout'
 import ProtectedRoute from './pages/ProtectedRoute'
+import Error from './pages/Error'
 import { useSelector } from 'react-redux'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
@@ -62,8 +63,9 @@ function App() {
             }
           />
         </Route>
+          <Route path='*' element={<Error />} />
       </Routes>
-      <ToastContainer autoClose={7000} theme='light' />
+      <ToastContainer autoClose={2000} theme='light' />
     </div>
   )
 }

@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { toast } from 'react-toastify'
 
 const users =
   localStorage.getItem('users') !== null
@@ -13,31 +14,75 @@ const token =
 const initialState = {
   auth: users,
   isAuthenticated: token,
+  activeUser: {}
 }
 
 const authSlice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
+    register: (state, action) => {
+      // extracting values from localStorage
+      const storageArr = JSON.parse(localStorage?.getItem('users'))
+      const storageName = storageArr?.find(
+        (item) => item?.name === action?.payload?.name
+      )
+      const storageEmail = storageArr?.find(
+        (item) => item?.email === action?.payload?.email
+      )
+      if (
+        action?.payload?.name !== storageName?.name ||
+        action?.payload?.email !== storageEmail?.email
+      ) {
+        state.auth.push(action.payload)
+        localStorage.setItem(
+          'users',
+          JSON.stringify(state.auth.map((item) => item))
+        )
+        state.isAuthenticated = 'true'
+        localStorage.setItem(
+          'token',
+          JSON.stringify((state.isAuthenticated = 'true'))
+        )
+        toast.success(`Greetings ${action.payload.name}`)
+      } else {
+        localStorage.setItem(
+          'token',
+          JSON.stringify((state.isAuthenticated = 'false'))
+        )
+        toast.error(`User with this name allready exists`)
+        return
+      }
+    },
     login: (state, action) => {
-      state.auth.push(action.payload)
-      localStorage.setItem(
-        'users',
-        JSON.stringify(state.auth.map((item) => item))
+      // extracting values from localStorage
+      const storageArr = JSON.parse(localStorage?.getItem('users'))
+      const storageName = storageArr?.find(
+        (item) => item?.name === action?.payload?.name
       )
-      state.isAuthenticated = 'true'
-      localStorage.setItem(
-        'token',
-        JSON.stringify((state.isAuthenticated = 'true'))
+      const storagePassword = storageArr?.find(
+        (item) => item?.password === action?.payload?.password
       )
+      if (
+        action?.payload?.name !== storageName?.name ||
+        action?.payload?.password !== storagePassword?.password
+      ) {
+        localStorage.setItem(
+          'token',
+          JSON.stringify((state.isAuthenticated = 'false'))
+        )
+        toast.error(`Credentials are invalid`)
+      } else {
+        localStorage.setItem(
+          'token',
+          JSON.stringify((state.isAuthenticated = 'true'))
+        )
+        // setting up active user
+        state.activeUser = action.payload
+        toast.success(`Greetings ${action.payload.name}`)
+      }
     },
     logout: (state, action) => {
-      state.isAuthenticated = 'false'
-      state.auth.push(action.payload)
-      localStorage.setItem(
-        'users',
-        JSON.stringify(state.auth = [])
-      )
       localStorage.setItem(
         'token',
         JSON.stringify((state.isAuthenticated = 'false'))
@@ -46,5 +91,5 @@ const authSlice = createSlice({
   },
 })
 
-export const { login, logout } = authSlice.actions
+export const { register, login, logout } = authSlice.actions
 export default authSlice.reducer

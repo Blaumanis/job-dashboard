@@ -1,0 +1,56 @@
+@import '_variables';
+
+.user-info {
+  margin: 2rem;
+  padding: 1rem;
+
+  .info-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  p {
+    padding: 0.5rem;
+    background-color: $primary;
+    color: $textLight;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: $radiusNormal;
+  }
+
+  p span {
+    font-weight: bold;
+    text-transform: capitalize;
+  }
+
+  .email span, .username span {
+    text-transform: none;
+  }
+}
+
+@media (max-width: 868px) {
+  .user-info .info-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .user-info {
+    margin: 1rem;
+  }
+}
+
+@media (max-width: 568px) {
+  .user-info .info-container {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-
+import { toast } from 'react-toastify'
 import '../styles/_form.scss'
 import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
-import { login } from '../features/auth/authSlice'
+import { register } from '../features/auth/authSlice'
 
 const Register = () => {
   const navigate = useNavigate()
@@ -14,18 +14,20 @@ const Register = () => {
     password: '',
   })
 
-  const handleInput = (e) => {
-    setUser(() => ({
-      ...user,
-      [e.target.name]: e.target.value,
-    }))
-  }
-
-  const handleClick = async (e) => {
+  const handleClick = (e) => {
     e.preventDefault()
-    if (!user) return
-    dispatch(login(user))
-    navigate('/dashboard')
+    if (user.name && user.email && user.password) {
+      navigate('/dashboard')
+      dispatch(
+        register({
+          name: user.name,
+          email: user.email,
+          password: user.password,
+        })
+      )
+    } else {
+      toast.error(`Please provide required fields`)
+    }
   }
 
   return (
@@ -38,11 +40,23 @@ const Register = () => {
         <h2 className='title'>Register</h2>
         <div className='input-group'>
           <label htmlFor='name'>Name</label>
-          <input type='text' id='name' name='name' onChange={handleInput} />
+          <input
+            type='text'
+            id='name'
+            name='name'
+            onChange={(e) => setUser({ ...user, name: e.target.value })}
+            value={user.name}
+          />
         </div>
         <div className='input-group'>
           <label htmlFor='email'>Email</label>
-          <input type='email' id='email' name='email' onChange={handleInput}/>
+          <input
+            type='email'
+            id='email'
+            name='email'
+            onChange={(e) => setUser({ ...user, email: e.target.value })}
+            value={user.email}
+          />
         </div>
         <div className='input-group'>
           <label htmlFor='password'>Password</label>
@@ -50,7 +64,8 @@ const Register = () => {
             type='password'
             id='password'
             name='password'
-            onChange={handleInput}
+            onChange={(e) => setUser({ ...user, password: e.target.value })}
+            value={user.password}
           />
         </div>
         <button onClick={(e) => handleClick(e)} className='btn'>

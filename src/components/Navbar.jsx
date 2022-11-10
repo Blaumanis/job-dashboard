@@ -4,12 +4,11 @@ import '../styles/_navbar.scss'
 import { useDispatch, useSelector } from 'react-redux'
 import { toggleSidebar, toggleMobileMenu } from '../features/nav/navSlice'
 import { logout } from '../features/auth/authSlice'
-import MobileMenu from './MobileMenu'
 
 const Navbar = () => {
   const dispatch = useDispatch()
   let { isOpen, isMobileOpen } = useSelector((state) => state.nav)
-  const { auth } = useSelector((state) => state.auth)
+  const { auth, activeUser } = useSelector((state) => state.auth)
 
   const [isClicked, setIsClicked] = useState(false)
 
@@ -48,7 +47,7 @@ const Navbar = () => {
             className='btn logout-btn'
           >
             <UserIcon />
-            {auth[0]?.name}
+            {activeUser?.name}
             <ArrowDownIcon />
           </button>
           {isClicked ? (

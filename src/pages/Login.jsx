@@ -13,18 +13,17 @@ const Login = () => {
     password: '',
   })
 
-
-
   const handleClick = (e) => {
     e.preventDefault()
     if(user.name && user.password){
+      navigate('/dashboard')
       dispatch(login({
         name: user.name,
         password: user.password,
       }))
+    } else {
+      toast.error(`Please provide required fields`)
     }
-    toast.success(`Greetings ${user.name}`);
-    navigate('/dashboard')
   }
 
   return (
