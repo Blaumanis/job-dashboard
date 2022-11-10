@@ -18,8 +18,9 @@
 
 ### Things user able to do
 
-- Login with username and password, which will be stored in local storage
-- Logout - user with username and password attributes will be destroyed
+- Register - have to provide username,email,password
+- Login with username and password, which have to meet the stored username and password
+- Logout - user will be logged out from dashboard
 - Adding a new job to a job list which will be stored in local storage
 - Edit existing job
 - Search jobs by search query, job status and job type
@@ -34,10 +35,11 @@
 - Redux store
 - Local storage 
 - Protected routes
-- Login and register Forms
+- Login and register forms
 - Forms for adding and editing job
 - List of jobs
 - Stats for the added jobs
+- Profile page with user credentials
 
 ### Things learned
 
