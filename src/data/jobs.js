@@ -1,7 +1,7 @@
 const jobItems =  [
     {
       company: "Bechtelar-Bednar",
-      createdAt: Date.now(),
+      createdAt: 160543411111,
       id: "cl9wn0un43yp60bw6k63esu8e",
       jobStatus: "declined",
       jobType: "internship",
@@ -10,7 +10,7 @@ const jobItems =  [
     },
     {
       company: "Kunze And Sons",
-      createdAt: Date.now(),
+      createdAt: 17054345211,
       id: "cl9wn1qle3wso09w4xuidew2l",
       jobStatus: "interview",
       jobType: "remote",
@@ -19,7 +19,7 @@ const jobItems =  [
     },
     {
       company: "Klocko And Sons",
-      createdAt: Date.now(),
+      createdAt: 287054345211,
       id: "cl9wn2mn03ys80bw6492gcikp",
       jobStatus: "pending",
       jobType: "full-time",

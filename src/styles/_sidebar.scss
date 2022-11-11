@@ -7,7 +7,6 @@
   width: 250px;
   @include customFlex(flex-start, flex-start, column, 4);
   box-shadow: rgb(0 0 0 / 10%) 1px 0px 0px 0px;
-  transition: $transNormal;
 
   .sidebar-logo {
     padding: 2rem;

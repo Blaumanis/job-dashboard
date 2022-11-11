@@ -6,7 +6,6 @@
   top: 0;
   padding: 2rem;
   box-shadow: rgb(0 0 0 / 10%) 0px 1px 0px 0px;
-  animation: goFull 1s ease-in;
 
   .wrapper {
     @include customFlex(center, space-between, row, 0);
@@ -93,14 +92,3 @@ h2 {
     padding: 0.5rem 0.8rem;
   }
 }
-
-// @keyframes goFull {
-//   0% {
-//     opacity: 0;
-//     width: 80vw;
-//   }
-//   100% {
-//     opacity: 1;
-//     width: 100vw;
-//   }
-// }

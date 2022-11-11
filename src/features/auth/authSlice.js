@@ -17,6 +17,7 @@ const token =
     ? JSON.stringify(localStorage.getItem('token'))
     : 'false'
 
+// initialState
 const initialState = {
   auth: users,
   isAuthenticated: token,
@@ -36,6 +37,7 @@ const authSlice = createSlice({
       const storageEmail = storageArr?.find(
         (item) => item?.email === action?.payload?.email
       )
+      // if user does not exist then register
       if (
         action?.payload?.name !== storageName?.name ||
         action?.payload?.email !== storageEmail?.email
@@ -51,6 +53,7 @@ const authSlice = createSlice({
           JSON.stringify((state.isAuthenticated = 'true'))
         )
         toast.success(`Greetings ${action.payload.name}`)
+        // else do not register
       } else {
         localStorage.setItem(
           'token',
@@ -69,6 +72,7 @@ const authSlice = createSlice({
       const storagePassword = storageArr?.find(
         (item) => item?.password === action?.payload?.password
       )
+      // if user does not exist do not login
       if (
         action?.payload?.name !== storageName?.name ||
         action?.payload?.password !== storagePassword?.password
@@ -78,6 +82,7 @@ const authSlice = createSlice({
           JSON.stringify((state.isAuthenticated = 'false'))
         )
         toast.error(`Credentials are invalid`)
+        // else login
       } else {
         localStorage.setItem(
           'token',

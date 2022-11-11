@@ -10,12 +10,17 @@ import { Link } from 'react-router-dom'
 import '../styles/_mobileMenu.scss'
 import { toggleMobileMenu } from '../features/nav/navSlice'
 import { useDispatch } from 'react-redux'
+import { motion } from 'framer-motion'
 
 const MobileMenu = () => {
   const dispatch = useDispatch()
 
   return (
-    <section className='mobile-menu'>
+    <motion.section className='mobile-menu'
+    // initial={{ opacity: 0 }}
+    // animate={{ opacity: 1 }}
+    // exit={{ opacity: 0 }}
+    >
       <div className='inside-container'>
         <button onClick={() => dispatch(toggleMobileMenu())}>
           <CloseIcon className='close-icon' />
@@ -40,7 +45,7 @@ const MobileMenu = () => {
           </Link>
         </div>
       </div>
-    </section>
+    </motion.section>
   )
 }
 

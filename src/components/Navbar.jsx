@@ -4,6 +4,7 @@ import '../styles/_navbar.scss'
 import { useDispatch, useSelector } from 'react-redux'
 import { toggleSidebar, toggleMobileMenu } from '../features/nav/navSlice'
 import { logout } from '../features/auth/authSlice'
+import { motion } from 'framer-motion'
 
 const Navbar = () => {
   const dispatch = useDispatch()
@@ -28,7 +29,7 @@ const Navbar = () => {
   }
 
   return (
-    <nav className={isOpen ? 'top-navbar' : 'top-navbar full'}>
+    <motion.nav className={isOpen ? 'top-navbar' : 'top-navbar full'}>
       <div className='wrapper'>
         <div onClick={() => handleToggler()}>
           <MenuIcon />
@@ -59,7 +60,7 @@ const Navbar = () => {
           )}
         </div>
       </div>
-    </nav>
+    </motion.nav>
   )
 }
 
