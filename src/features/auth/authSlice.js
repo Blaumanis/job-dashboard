@@ -92,7 +92,7 @@ const authSlice = createSlice({
         state.activeUser = action.payload
         localStorage.setItem(
           'activeUser',
-          JSON.stringify(state.activeUser)
+          JSON.stringify(action?.payload?.name)
         )
         toast.success(`Greetings ${action.payload.name}`)
       }

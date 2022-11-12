@@ -11,8 +11,6 @@ const Profile = () => {
     (item) => item?.name === activeUser.name
   )
 
-  console.log(profile)
-
   return (
     <>
       <ProfileForm />
