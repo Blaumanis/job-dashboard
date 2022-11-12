@@ -11,6 +11,7 @@ const storageActiveUser =
   localStorage.getItem('activeUser') !== null
     ? JSON.parse(localStorage.getItem('activeUser'))
     : {}
+localStorage.setItem('activeUser', JSON.stringify({}))
 
 const token =
   localStorage.getItem('token') !== null
@@ -84,15 +85,15 @@ const authSlice = createSlice({
         toast.error(`Credentials are invalid`)
         // else login
       } else {
+        // setting up active user
+        state.activeUser = action.payload
+        localStorage.setItem('activeUser', JSON.stringify(storageName))
+        toast.success(`Greetings ${action.payload.name}`)
         localStorage.setItem(
           'token',
           JSON.stringify((state.isAuthenticated = 'true'))
         )
-        toast.success(`Greetings ${action.payload.name}`)
       }
-      // setting up active user
-      state.activeUser = action.payload
-      localStorage.setItem('activeUser', JSON.stringify(action?.payload?.name))
     },
     logout: (state, action) => {
       localStorage.setItem(
