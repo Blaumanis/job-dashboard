@@ -15,6 +15,9 @@
 - [React-toastify](https://www.npmjs.com/package/react-toastify) - Npm package for notifications
 - [uuid](https://www.npmjs.com/package/uuid) - Npm package for generating unique ID's
 - [moment](https://www.npmjs.com/package/moment) - JS date library for parsing,validating,manipulating and formatting dates
+- [framer-motion](https://www.framer.com/motion/) - React animation library
+- [chartjs](https://www.chartjs.org/) - JS charting library
+- [react-chartjs-2](https://react-chartjs-2.js.org/) - React components for [chartjs](https://www.chartjs.org/) charting library
 
 ### Things user able to do
 
@@ -28,7 +31,7 @@
 - Delete existing job
 - Toggling sidebar menu and mobile menu on smaller screen
 - Clear form fields on all existing forms
-
+- Toggling between two charts in Dashboard page
 ### Things implemented
 
 - Responsive design
@@ -40,14 +43,22 @@
 - List of jobs
 - Stats for the added jobs
 - Profile page with user credentials
+- Bar and Area chart for showing how many jobs added in each month
+
+### Things that still need to be implemented
+
+- Profile information which is passed into profile page, has to be saved into the localStorage and pushed to that particular user which was logged in
+- Jobs have to be attached to the current user which created them
+- Fix animation for exit part for Sidebar component
 
 ### Things learned
 
-- Saving an array ob objects inside local storage
+- Saving an array of objects inside local storage
 - Implementing redux store and creating reducers and using the provided state
 - First time of using npm package `moment` which was greate for converting static Date.now() method into readable date foramat
 - Implementing protected routes. Basically if user is not logged in, he cannot access project dashboard
 - Sort by object property. Had to sort jobs list by by job title in alphabetic order
+- Working with chartjs for the first time, so picked up couple of things while implementing in the project
 
 ### Screenshots
 

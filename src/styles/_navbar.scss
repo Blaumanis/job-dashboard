@@ -6,6 +6,7 @@
   top: 0;
   padding: 2rem;
   box-shadow: rgb(0 0 0 / 10%) 0px 1px 0px 0px;
+  z-index: 2;
 
   .wrapper {
     @include customFlex(center, space-between, row, 0);
@@ -32,10 +33,6 @@
   display: none;
 }
 
-h2 {
-  font-weight: 500;
-}
-
 .logout-container {
   position: relative;
   .logout {
@@ -60,13 +57,13 @@ h2 {
 @media (max-width: 768px) {
   .top-navbar {
     width: 100vw;
+    h2 {
+      display: none;
+    }
   }
   .logo {
     display: block;
     width: 130px;
-  }
-  h2 {
-    display: none;
   }
   .top-navbar .btn {
     font-size: 1rem;

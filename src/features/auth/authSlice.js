@@ -11,11 +11,10 @@ const storageActiveUser =
   localStorage.getItem('activeUser') !== null
     ? JSON.parse(localStorage.getItem('activeUser'))
     : {}
-localStorage.setItem('activeUser', JSON.stringify({}))
 
 const token =
   localStorage.getItem('token') !== null
-    ? JSON.stringify(localStorage.getItem('token'))
+    ? (localStorage.getItem('token'))
     : 'false'
 
 // initialState
@@ -48,19 +47,14 @@ const authSlice = createSlice({
           'users',
           JSON.stringify(state.auth.map((item) => item))
         )
-        state.isAuthenticated = 'true'
-        localStorage.setItem(
-          'token',
-          JSON.stringify((state.isAuthenticated = 'true'))
-        )
-        toast.success(`Greetings ${action.payload.name}`)
+        toast.success(`User ${action.payload.name} is created`)
         // else do not register
       } else {
         localStorage.setItem(
           'token',
-          JSON.stringify((state.isAuthenticated = 'false'))
+          (state.isAuthenticated = 'false')
         )
-        toast.error(`User with this name allready exists`)
+        toast.error(`User with this name or email allready exists`)
         return
       }
     },
@@ -78,27 +72,24 @@ const authSlice = createSlice({
         action?.payload?.name !== storageName?.name ||
         action?.payload?.password !== storagePassword?.password
       ) {
-        localStorage.setItem(
-          'token',
-          JSON.stringify((state.isAuthenticated = 'false'))
-        )
         toast.error(`Credentials are invalid`)
         // else login
       } else {
         // setting up active user
         state.activeUser = action.payload
-        localStorage.setItem('activeUser', JSON.stringify(storageName))
+        localStorage.setItem('activeUser', JSON.stringify(state.activeUser))
         toast.success(`Greetings ${action.payload.name}`)
         localStorage.setItem(
           'token',
-          JSON.stringify((state.isAuthenticated = 'true'))
+          (state.isAuthenticated = 'true')
         )
       }
     },
-    logout: (state, action) => {
+    // logout
+    logout: (state) => {
       localStorage.setItem(
         'token',
-        JSON.stringify((state.isAuthenticated = 'false'))
+        (state.isAuthenticated = 'false')
       )
       localStorage.setItem('activeUser', JSON.stringify({}))
     },

@@ -2,8 +2,11 @@
 
 .user-info {
   margin: 2rem;
-  padding: 1rem;
-
+  padding: 1rem 2rem;
+  background-color: $primary;
+  border-radius: $radiusLarge;
+  
+  
   .info-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -12,14 +15,14 @@
 
   h2 {
     font-size: 2rem;
-    text-align: center;
     margin-bottom: 2rem;
+    color: $textLight;
   }
 
   p {
     padding: 0.5rem;
-    background-color: $primary;
-    color: $textLight;
+    background-color: $textLight;
+    color: $primary;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -30,6 +33,7 @@
   p span {
     font-weight: bold;
     text-transform: capitalize;
+    font-size: 1.5rem;
   }
 
   .email span{

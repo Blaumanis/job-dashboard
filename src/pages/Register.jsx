@@ -17,17 +17,22 @@ const Register = () => {
   const handleClick = (e) => {
     e.preventDefault()
     if (user.name && user.email && user.password) {
-      navigate('/dashboard')
+      navigate('/register')
       dispatch(
         register({
           name: user.name,
           email: user.email,
-          password: user.password,
+          password: user.password,  
         })
       )
     } else {
       toast.error(`Please provide required fields`)
     }
+    setUser({
+      name: '',
+      email: '',
+      password: '',
+    })
   }
 
   return (
