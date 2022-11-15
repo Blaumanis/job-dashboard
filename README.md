@@ -32,6 +32,7 @@
 - Toggling sidebar menu and mobile menu on smaller screen
 - Clear form fields on all existing forms
 - Toggling between two charts in Dashboard page
+
 ### Things implemented
 
 - Responsive design
